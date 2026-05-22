@@ -1,0 +1,286 @@
+H-SDACLP.txt
+==================================================
+
+Name:
+H-SDACLP (SDALP)
+
+/sdælp/
+
+- H-SDACLP: Human-in-the-Loop Software Development Agent Continuous Lifecycle Protocol (formal)
+- SDALP: Software Development Agent Lifecycle Protocol (operational)
+- Pronunciation: “sdalp” (like “scalp” with ‘c’ → ‘d’)
+
+Version:
+H-SDACLP/1.0
+
+Status:
+FINAL (HARD LOCK - SOC CLEAN)
+
+==================================================
+1. Abstract
+==================================================
+H-SDACLP defines a protocol for orchestrating software development agents in a continuous, closed-loop lifecycle. It enforces strict separation of concerns across lifecycle execution, data modeling, storage, observability, and governance, ensuring a fully auditable, reproducible, and human-in-the-loop system.
+
+==================================================
+2. Core Lifecycle Loop
+==================================================
+CE → CV → CC → CL → CO
+→ CP
+→ CUS → CES → CMS
+→ CRFC → CS
+→ CB → CT → CUTC → CQC → CQA → CR → CUAT → CUBS
+→ CI → CD
+→ CLog → CTrace → CMetric → CAlert → CMonitor → CHealth → CReady → CReport
+→ CAR → CAG → CAC → CAD → CA
+→ CM → CF → CX → CK → CBC
+→ RB → CE
+
+==================================================
+3. Phase Definitions (Lifecycle Layer)
+==================================================
+
+Economic:
+CE    Continuous Exploration
+CV    Continuous Value
+CC    Continuous Cost
+CL    Continuous Leverage
+CO    Continuous Optimization
+
+Product:
+CP    Continuous Product
+
+Story:
+CUS   Continuous User Story
+CES   Continuous Enabler Story
+CMS   Continuous Mediator Story (HUMAN-ONLY)
+
+Protocol:
+CRFC  Continuous RFC
+CS    Continuous Specification
+
+Engineering:
+CB    Continuous Build
+CT    Continuous Test
+CUTC  Continuous Unit Test Coverage
+CQC   Continuous Quality Control
+CQA   Continuous Quality Assurance
+CR    Continuous Refactor
+CUAT  Continuous User Acceptance Testing
+CUBS  Continuous User Behavior Simulation
+CI    Continuous Integration
+CD    Continuous Deployment
+
+Observability (Signal Layer):
+CLog     Continuous Logging
+CTrace   Continuous Tracing
+CMetric  Continuous Metrics
+CAlert   Continuous Alerting
+CMonitor Continuous Monitoring
+CHealth  Continuous Health
+CReady   Continuous Readiness
+CReport  Continuous Reporting
+
+Governance (Decision Layer):
+CAR   Continuous Assess for Release
+CAG   Continuous Assess Gate
+CAC   Continuous Approval Compliance
+CAD   Continuous Approval Decision (HUMAN)
+CA    Continuous Approval (HUMAN)
+
+Business:
+CM    Continuous Monetization
+CF    Continuous Funding
+CX    Continuous Experience
+CK    Continuous Kill / Pivot
+CBC   Continuous Competition
+
+Recovery:
+RB    Continuous Rollback
+
+==================================================
+4. Global Invariants (Cross-Cutting)
+==================================================
+
+CVersion:
+- ALL artifacts MUST be versioned
+- Append-only
+- Full lineage traceable
+
+CRevision:
+- ALL changes MUST be revision-tracked
+- MUST include actor, timestamp, diff
+- Full history reconstructable
+
+==================================================
+5. Design Principles (Control Layer)
+==================================================
+
+HITL:
+- Human-required: CMS, CAD, CA
+- Human accountability enforced
+
+SoC:
+- One phase = one agent
+- No shared state
+- No cross-phase mutation
+
+RACI:
+- Every phase MUST define R/A/C/I
+
+C<name> (Extensibility Model):
+- Each C<name> MUST define:
+  doc / spec / RFC / agent / environment / deployment / development / definition
+- MAY evolve per application
+- MUST comply with core invariants
+
+MA (Minimal Adoption):
+- Subset adoption allowed
+- MUST preserve core invariants
+
+==================================================
+6. Agent Model (Execution Layer)
+==================================================
+
+- One phase = one agent
+- Stateless execution
+- Communication via artifacts/events only
+
+Human-only:
+- CMS, CAD, CA
+
+==================================================
+7. Execution Modes (Orchestration Layer)
+==================================================
+
+Pipeline: linear
+Graph: DAG
+Vector: optimization
+Geo: distributed
+
+==================================================
+8. Protocol Semantics (Artifact Layer)
+==================================================
+
+Artifacts:
+- Typed
+- Immutable (recommended)
+- Versioned (CVersion)
+- Revision-tracked (CRevision)
+
+==================================================
+9. Quality Model (Quality Layer)
+==================================================
+
+CT → CUTC → CQC → CQA → CUAT → CUBS
+
+==================================================
+10. Observability Model (Signal Layer)
+==================================================
+
+CLog → CTrace → CMetric → CAlert → CMonitor → CHealth → CReady → CReport
+
+- Signal generation only
+- No decision authority
+
+==================================================
+11. Governance Model (Decision Layer)
+==================================================
+
+CD → CAR → CAG → CAC → CAD → CA → CM
+
+- System: CAR, CAG, CAC
+- Human: CAD, CA
+
+==================================================
+12. Failure & Recovery (Resilience Layer)
+==================================================
+
+Test failure:
+CT → CQC → CR → CT
+
+Deployment failure:
+CD → RB → CR → CI → CD
+
+==================================================
+13. Data Models (Logical Layer)
+==================================================
+
+Artifacts:
+- Core entities
+
+Metadata:
+- Governance, RACI, indexing
+
+Graph Model:
+- Relationships, lineage
+
+Event Model:
+- Transitions, decisions
+
+Vector Model:
+- Embeddings
+
+AI Knowledge:
+- RAG
+- Memory (short-term / long-term)
+
+Requirements:
+- Versioned
+- Revision-tracked
+- Queryable
+
+==================================================
+14. Storage Models (Physical Layer)
+==================================================
+
+Object Storage:
+- Artifacts
+
+Database:
+- Metadata
+
+Event Store:
+- Events
+
+Version Control System:
+- Code, specs
+
+Observability Storage:
+- Logs, traces, metrics
+
+Graph Database:
+- Relationships
+
+Vector Database:
+- Embeddings
+
+Document/File Storage:
+- Docs, binaries
+
+Requirements:
+- Append-only preferred
+- Audit support required
+- Lineage reconstruction required
+
+==================================================
+15. Compliance
+==================================================
+
+MUST:
+- Enforce SoC
+- Enforce HITL
+- Enforce governance chain
+- Implement observability
+- Support rollback
+- Maintain lineage
+- Enforce CVersion + CRevision
+
+==================================================
+16. Definition
+==================================================
+
+H-SDACLP (SDALP) is a SoC-enforced, RACI-governed, fully versioned and revision-tracked, human-in-the-loop protocol that structures software development as a continuous lifecycle across execution, data, storage, observability, and governance layers, ensuring auditability, reproducibility, and controlled decision-making.
+
+==================================================
+END
+==================================================
