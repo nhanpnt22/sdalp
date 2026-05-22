@@ -166,3 +166,25 @@ Implementations must:
 - Support rollback.
 - Maintain lineage.
 - Enforce CVersion and CRevision.
+
+## SDALP Quick Summary
+
+Software Development Agent Lifecycle Protocol
+
+Formal name: H-SDACLP  
+Pronunciation: /sdælp/
+
+## Overview
+SDALP defines a continuous, human-in-the-loop lifecycle protocol for software development using agents, with strict separation of concerns (SoC), full observability, and governance.
+
+## Spec
+See: [H-SDACLP.txt](H-SDACLP.txt)
+
+## Key Concepts
+- One phase = one agent
+- No shared state
+- Full versioning (CVersion) + revision tracking (CRevision)
+- Human-in-the-loop (CMS, CAD, CA)
+
+## Status
+v1.0 — FINAL (HARD LOCK - SOC CLEAN)
